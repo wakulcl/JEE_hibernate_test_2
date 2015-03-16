@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+	<class name="cl.barisione.test.Document" table="DOCUMENTS">
+	    <id name="id" column="id" type="long">
+	         <generator class="increment"/>
+	    </id>
+	    <property name="description"/>
+	    <set name="concepts"
+			table="DOCUMENT_CONCEPT"
+			lazy="true"
+			sort="natural"
+			cascade="save-update">
+			<key column="document_id"/>
+			<many-to-many class="cl.barisione.test.Concept" column="concept_id"/>
+		</set>
+	</class>
+</hibernate-mapping>

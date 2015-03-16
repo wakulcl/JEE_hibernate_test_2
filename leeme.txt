@@ -1,0 +1,6 @@
+Revisar que en hibernate.hbm.xml 
+la linea :
+
+<property name="hibernate.hbm2ddl.auto">create-drop</property>
+tenga ese valor y no
+<property name="hibernate.hbm2ddl.auto">update</property>

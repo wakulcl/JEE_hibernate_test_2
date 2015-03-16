@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+	<class name="cl.barisione.test.Author" table="AUTHORS">
+        <id name="id" column="id" type="long">
+            <!-- The Author must have the same identifier as the Person -->
+            <generator class="increment"/> 
+        </id>
+
+        <property name="alias"/>
+        <many-to-one name="person" class="cl.barisione.test.Person" column="id_person" cascade="save-update" lazy="false"/>
+	</class>
+</hibernate-mapping>
